@@ -8,7 +8,9 @@ const Card = ({ img, title, desc, price }) => {
       </div>
       <div className="flex flex-col justify-between h-full">
         <div className="">
-          <p className="text-center text-sm ">{title}</p>
+          <p className="text-center text-sm whitespace-nowrap overflow-hidden text-ellipsis">
+            {title}
+          </p>
         </div>
         <hr className="border-2" />
         <div className="flex items-center justify-between">

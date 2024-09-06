@@ -10,7 +10,6 @@ import Cart from "./pages/cartPage/Cart";
 import Contact from "./pages/contactPage/Contact";
 import { Provider } from "react-redux";
 import store from "./app/store";
-
 const router = createBrowserRouter([
   {
     element: <MainLayout />,

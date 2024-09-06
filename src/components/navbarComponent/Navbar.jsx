@@ -8,6 +8,8 @@ import { IoCartOutline, IoClose } from "react-icons/io5";
 import { CiSearch } from "react-icons/ci";
 import { FiAlignJustify } from "react-icons/fi";
 import MultipleDemo from "../bigMenu/MultipleDemo";
+import { Sidebar } from "primereact/sidebar";
+import { Button } from "primereact/button";
 
 export default function Navbar() {
   const [openMenu, setOpenMenu] = useState(false);
@@ -25,6 +27,7 @@ export default function Navbar() {
   useEffect(() => {
     localStorage.setItem("lang", newLang.lg);
   }, [newLang]);
+  const [visible, setVisible] = useState(false);
 
   return (
     <div>
@@ -65,7 +68,7 @@ export default function Navbar() {
         <nav className="flex w-full items-center gap-[25px]">
           <div className="">
             <button
-              onClick={() => setOpenMenu((prev) => !prev)}
+              onClick={() => setOpenMenu(() => setVisible(true))}
               className="flex items-center gap-2 bg-[#FB0F40] hover:bg-[#d03939] transition text-white py-[14px] px-[20px] rounded"
             >
               <span className="text-2xl">
@@ -103,22 +106,13 @@ export default function Navbar() {
           </div>
         </nav>
       </div>
-      {openMenu && (
-        <div className="">
-          <div className="relative top-0 z-20 container">
-            <div className="absolute ">
-              <div
-                className=""
-                style={{
-                  boxShadow: "100px 100px 45px 2000px rgba(0, 0, 0, 0.2)",
-                }}
-              >
-                <MultipleDemo />
-              </div>
-            </div>
-          </div>
+      <div className="">
+        <div className="card flex justify-content-center">
+          <Sidebar className="p-2 bg-gray-300 w-auto" visible={visible} onHide={() => setVisible(false)}>
+            <div className="mt-4"><MultipleDemo /></div>
+          </Sidebar>
         </div>
-      )}
+      </div>
     </div>
   );
 }

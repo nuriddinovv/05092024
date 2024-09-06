@@ -116,7 +116,7 @@ const App = () => {
       onOpenChange={onOpenChange}
       onClick={onClick}
       items={items}
-      className="w-[100vw] md:w-[328px] "
+      className="w-[96vw] md:w-[328px] "
     />
   );
 };
