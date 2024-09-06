@@ -108,7 +108,7 @@ export default function Navbar() {
       </div>
       <div className="">
         <div className="card flex justify-content-center">
-          <Sidebar className="p-2 bg-gray-300 w-auto" visible={visible} onHide={() => setVisible(false)}>
+          <Sidebar className="p-2 bg-white shadow-2xl w-auto" visible={visible} onHide={() => setVisible(false)}>
             <div className="mt-4"><MultipleDemo /></div>
           </Sidebar>
         </div>

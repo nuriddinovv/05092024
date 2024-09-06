@@ -2,7 +2,7 @@ import React from "react";
 import "./card.css";
 const Card = ({ img, title, desc, price }) => {
   return (
-    <div className="w-56 h-auto bg-white shadow-md rounded-md flex flex-col justify-start p-5 gap-3 relative card">
+    <div className="w-full md:w-56 h-auto bg-white shadow-md rounded-md flex flex-col justify-start p-5 gap-3 relative card mx-auto">
       <div className="">
         <img src={img} alt={title} className=" h-[200px] mx-auto card_img" />
       </div>

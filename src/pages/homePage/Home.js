@@ -40,7 +40,7 @@ export default function Home() {
           ))}
         </Swiper>
       </div>
-      <div className="flex flex-wrap gap-3 gap-y-6">
+      <div className="grid grid-cols-2 md:grid-cols-4 mx-auto gap-3 gap-y-6">
         {data.map((item) => (
           <Card
             key={item.id}
