@@ -9,24 +9,11 @@ import { CiSearch } from "react-icons/ci";
 import { FiAlignJustify } from "react-icons/fi";
 import MultipleDemo from "../bigMenu/MultipleDemo";
 import { Sidebar } from "primereact/sidebar";
-import { Button } from "primereact/button";
+import ru_flag from "../../Assets/ru_flag.svg";
+import uz_flag from "../../Assets/uz_flag.svg";
 
 export default function Navbar() {
   const [openMenu, setOpenMenu] = useState(false);
-  const languages = [
-    { name: "Uzbek", lg: "uz" },
-    { name: "Rus", lg: "ru" },
-  ];
-
-  const [newLang, setLang] = useState(
-    localStorage.getItem("lang")
-      ? languages.find((lang) => lang.lg === localStorage.getItem("lang"))
-      : languages[0]
-  );
-
-  useEffect(() => {
-    localStorage.setItem("lang", newLang.lg);
-  }, [newLang]);
   const [visible, setVisible] = useState(false);
 
   return (
@@ -36,7 +23,7 @@ export default function Navbar() {
           <Link to={"/"} className="text-3xl">
             LOGO
           </Link>
-          <div className="hidden md:flex items-center gap-4">
+          {/* <div className="hidden md:flex items-center gap-4">
             <Link
               to={"https://maps.app.goo.gl/FRGuFDt7FMNtJKYWA"}
               target="_blank"
@@ -53,16 +40,34 @@ export default function Navbar() {
               </span>
               <span>+998-99-999-99-99</span>
             </Link>
-          </div>
-          <div className="card flex justify-content-center z-20">
-            <Dropdown
-              value={newLang}
-              onChange={(e) => setLang(e.value)}
-              options={languages}
-              optionLabel="name"
-              placeholder="Select a Language"
-              className="w-20 flex items-center bg-white"
-            />
+          </div> */}
+          <div className="card flex justify-center items-center gap-3 z-20">
+            <div className="flex gap-3 ">
+              <Link className="hover:text-red-500 transition-all" to={"/about"}>
+                Biz haqimizda
+              </Link>
+              <Link
+                className="hover:text-red-500 transition-all"
+                to={"/contact"}
+              >
+                Bog'lanish
+              </Link>
+            </div>
+
+            <select name="Select Lang" className="h-5">
+              <option value="uz">
+                <p>
+                  <img src={uz_flag} alt="uz" className="w-4 h-4" />
+                  Uzbek
+                </p>
+              </option>
+              <option value="ru">
+                <p>
+                  <img src={ru_flag} alt="ru" className="w-4" />
+                  Russian
+                </p>
+              </option>
+            </select>
           </div>
         </header>
         <nav className="flex w-full items-center gap-[25px]">
@@ -90,26 +95,29 @@ export default function Navbar() {
               </div>
             </form>
           </div>
-          <div className="gap-3 hidden md:flex">
+          <div className="hidden md:flex">
             <Link to={"/favorite"} className="flex flex-col items-center">
               <span className="text-2xl">
                 <MdFavoriteBorder />
               </span>
               Saralangan
             </Link>
-            <Link to={"/cart"} className="flex flex-col items-center">
-              <span className="text-2xl">
-                <IoCartOutline />
-              </span>
-              Savatcha
-            </Link>
           </div>
         </nav>
       </div>
       <div className="">
         <div className="card flex justify-content-center">
-          <Sidebar className="p-2 bg-white shadow-2xl w-auto" visible={visible} onHide={() => setVisible(false)}>
-            <div className="mt-4"><MultipleDemo /></div>
+          <Sidebar
+            className="px-4 py-8 bg-white shadow-2xl w-auto"
+            visible={visible}
+            onHide={() => setVisible(false)}
+          >
+            <div className="pt-4">
+              <div className="">
+                <MultipleDemo />
+              </div>
+              <div className=""></div>
+            </div>
           </Sidebar>
         </div>
       </div>
