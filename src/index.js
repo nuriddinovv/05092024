@@ -8,6 +8,8 @@ import About from "./pages/aboutPage/About";
 import Favorite from "./pages/favoritePage/Favorite";
 import Cart from "./pages/cartPage/Cart";
 import Contact from "./pages/contactPage/Contact";
+import { Provider } from "react-redux";
+import store from "./app/store";
 
 const router = createBrowserRouter([
   {
@@ -38,4 +40,8 @@ const router = createBrowserRouter([
 ]);
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
-root.render(<RouterProvider router={router} />);
+root.render(
+  <Provider store={store}>
+    <RouterProvider router={router} />
+  </Provider>
+);
