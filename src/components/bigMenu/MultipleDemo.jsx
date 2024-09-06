@@ -37,7 +37,13 @@ const items = [
         key: "13",
         label: "Planshetlar",
         icon: <FaTabletAlt />,
-        children: [{ key: "131", label: "Barcha planshetlar", link: "tablet" }],
+        children: [
+          { key: "131", label: "Barcha planshetlar", link: "tablet" },
+          { key: "132", label: "Barcha planshetlar", link: "tablet" },
+          { key: "133", label: "Barcha planshetlar", link: "tablet" },
+          { key: "134", label: "Barcha planshetlar", link: "tablet" },
+          { key: "135", label: "Barcha planshetlar", link: "tablet" },
+        ],
       },
       {
         key: "14",
