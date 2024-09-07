@@ -1,8 +1,5 @@
 import React, { useState } from "react";
-import { FaPhoneAlt } from "react-icons/fa";
-import { FaLocationDot } from "react-icons/fa6";
 import { Link } from "react-router-dom";
-import { SelectButton } from "primereact/selectbutton";
 import { MdFavoriteBorder } from "react-icons/md";
 import { IoClose } from "react-icons/io5";
 import { CiSearch } from "react-icons/ci";
@@ -15,7 +12,6 @@ import uz_flag from "../../Assets/uz_flag.svg";
 export default function Navbar() {
   const [openMenu, setOpenMenu] = useState(false);
   const [visible, setVisible] = useState(false);
-
 
   return (
     <div>
