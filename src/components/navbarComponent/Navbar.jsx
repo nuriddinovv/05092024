@@ -1,10 +1,10 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { FaPhoneAlt } from "react-icons/fa";
 import { FaLocationDot } from "react-icons/fa6";
 import { Link } from "react-router-dom";
-import { Dropdown } from "primereact/dropdown";
+import { SelectButton } from "primereact/selectbutton";
 import { MdFavoriteBorder } from "react-icons/md";
-import { IoCartOutline, IoClose } from "react-icons/io5";
+import { IoClose } from "react-icons/io5";
 import { CiSearch } from "react-icons/ci";
 import { FiAlignJustify } from "react-icons/fi";
 import MultipleDemo from "../bigMenu/MultipleDemo";
@@ -16,6 +16,7 @@ export default function Navbar() {
   const [openMenu, setOpenMenu] = useState(false);
   const [visible, setVisible] = useState(false);
 
+
   return (
     <div>
       <div className="container mb-3">
@@ -23,24 +24,6 @@ export default function Navbar() {
           <Link to={"/"} className="text-3xl">
             LOGO
           </Link>
-          {/* <div className="hidden md:flex items-center gap-4">
-            <Link
-              to={"https://maps.app.goo.gl/FRGuFDt7FMNtJKYWA"}
-              target="_blank"
-              className="flex gap-2 items-center"
-            >
-              <span className="text-red-500">
-                <FaLocationDot />
-              </span>
-              <p>Tashkent</p>
-            </Link>
-            <Link to={"tel:+998906647969"} className="flex gap-2 items-center">
-              <span className="text-red-500">
-                <FaPhoneAlt />
-              </span>
-              <span>+998-99-999-99-99</span>
-            </Link>
-          </div> */}
           <div className="card flex justify-center items-center gap-3 z-20">
             <div className="flex gap-3 ">
               <Link className="hover:text-red-500 transition-all" to={"/about"}>
@@ -54,20 +37,12 @@ export default function Navbar() {
               </Link>
             </div>
 
-            <select name="Select Lang" className="h-5">
-              <option value="uz">
-                <p>
-                  <img src={uz_flag} alt="uz" className="w-4 h-4" />
-                  Uzbek
-                </p>
-              </option>
-              <option value="ru">
-                <p>
-                  <img src={ru_flag} alt="ru" className="w-4" />
-                  Russian
-                </p>
-              </option>
-            </select>
+            <div className="card flex justify-content-center">
+              <select className="bg-[#FB0F40] outline-none rounded text-white p-2 px-4">
+                <option value="uz">Uzbek</option>
+                <option value="ru">Rus</option>
+              </select>
+            </div>
           </div>
         </header>
         <nav className="flex w-full items-center gap-[25px]">
@@ -116,7 +91,6 @@ export default function Navbar() {
               <div className="">
                 <MultipleDemo />
               </div>
-              <div className=""></div>
             </div>
           </Sidebar>
         </div>
